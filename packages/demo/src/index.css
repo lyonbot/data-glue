@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+}
+
+.app {
+  display: grid;
+  height: 100vh;
+  gap: 8px;
+  grid-template-columns: 300px 1fr 1fr;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    'tree editor sidebar'
+    'tree output sidebar';
+  overflow: hidden;
+}
+
+.nodeTreeView {
+  grid-area: tree;
+  overflow: auto;
+  position: relative;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  overflow: auto;
+  padding: 16px;
+  border-left: 1px solid #eee;
+}
+
+.editor {
+  grid-area: editor;
+  min-width: 300px;
+}
+
+.editor-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.output {
+  grid-area: output;
+  overflow: auto;
+  min-width: 300px;
+}
+
+.exampleButtons {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.messageBar {
+  margin-bottom: 4px;
+  background-color: #cef;
+  padding: 6px 10px;
+}
+
+.messageBar.isError {
+  background-color: #f99;
+}
+
+/* -------------------------- */
+
+.cm-editor {
+  outline: 1px solid #999;
+  height: 150px;
+  max-height: 250px;
+}
+
+.cm-scroller {
+  overflow: auto;
+}
+
+.cm-highlightPart {
+  background-color: #f906;
+}
+
+.cm-errorMark {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #f30;
+  color: #fff;
+  line-height: 1em;
+  border-radius: 100%;
+}
+
+.cm-errorMark::after {
+  content: '×';
+}
+
+/* ******************** */
+
+.named-box {
+  position: relative;
+  padding-left: 4px;
+  border: 2px solid #f0f0f0;
+  border-left-width: 18px;
+  border-radius: 4px;
+}
+
+.named-box::before {
+  content: attr(name);
+  width: 18px;
+  float: left;
+  color: #666;
+  writing-mode: vertical-rl;
+  transform-origin: center center;
+  transform: rotate(180deg);
+  font-size: 10px;
+  margin-left: -22px;
+  padding: 4px 0;
+}
+
+.named-box::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}

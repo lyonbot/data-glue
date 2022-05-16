@@ -1,0 +1,55 @@
+{
+  "name": "lcml",
+  "version": "1.0.0",
+  "description": "Low-Code Markup Language (DSL) for Values with Dynamic Expressions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --ext ts,tsx .",
+    "dev": "pnpm run -r --filter ./packages/ --parallel dev",
+    "clean": "pnpm run -r --filter ./packages/ --parallel clean",
+    "build": "pnpm run -r --filter ./packages/ build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyonbot/lcml.git"
+  },
+  "keywords": [
+    "dsl",
+    "markup",
+    "json",
+    "dynamic",
+    "expression",
+    "interpolate"
+  ],
+  "author": "lyonbot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lyonbot/lcml/issues"
+  },
+  "homepage": "https://github.com/lyonbot/lcml#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.5",
+    "@microsoft/api-extractor": "^7.19.2",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "esbuild": "^0.14.6",
+    "eslint": "^8.5.0",
+    "esm": "^3.2.25",
+    "jest": "^27.4.5",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "quoteProps": "consistent",
+    "printWidth": 120,
+    "trailingComma": "all"
+  }
+}
